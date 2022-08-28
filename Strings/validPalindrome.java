@@ -16,6 +16,28 @@ Explanation: s is an empty string "" after removing non-alphanumeric characters.
 Since an empty string reads the same forward and backward, it is a palindrome.
 */
 
+//LeetCode Runtime - 0ms - Accepted
+
+class Solution {
+    public boolean isPalindrome(String s) {
+        s=s.toLowerCase();
+        StringBuffer a=new StringBuffer();
+        for(int i=0;i<s.length();i++){
+            if(Character.isDigit(s.charAt(i)) || Character.isLetter(s.charAt(i))){
+                a.append(s.charAt(i));
+            }
+        }
+        int n=a.length()-1;
+        for(int i=0;i<a.length()/2;i++){
+            if(a.charAt(i)!=a.charAt(n-i)){
+                return false;
+            }
+        }
+        return true;
+    }
+}
+
+----------------------------------------------------------------------or-------------------------------------------------------------------------------
 
 //--------------------Runtime - 3ms--------------------
 
@@ -36,39 +58,4 @@ public class validPalindrome{
 
         System.out.println(validPalindrome(s));
     }
-}
-
-------------------------------------------------------------------------------or---------------------------------------------------------------------------------------
-
-//Runtime - 0ms
-//Source  - https://programs.programmingoneonone.com/2021/08/leetcode-valid-palindrome-problem-solution.html
-
-int i =0, j = s.length()-1;
-    while(i<j) {
-        while(i<s.length() && !isAlphaNumeric(s.charAt(i))) i++;
-        while(j>=0 && !isAlphaNumeric(s.charAt(j))) j--;
-        if (j>i && !compare(s.charAt(i), s.charAt(j))) {
-            return false;
-        }
-        i++;j--;
-    }
-        
-   return true;           
-}
-private boolean compare(char a, char b) {
-    if (Character.isUpperCase(a)) {
-        a = (char)(a + 32);
-    }
-    if (Character.isUpperCase(b)) {
-        b = (char)(b +32);
-    }
-    return a == b;
-}
-
-private boolean isAlphaNumeric(char c) {
-    if (c >= 'a' && c <= 'z' || c >= 'A' && c <= 'Z' ||
-        c>= '0' && c <='9') {
-        return true;
-    }
-    return false;
 }
