@@ -21,7 +21,7 @@ Since an empty string reads the same forward and backward, it is a palindrome.
 
 import java.util.Scanner;
 
-public class str_1_validPalindrome{
+public class validPalindrome{
     
     public static boolean validPalindrome(String s){
         s = s.replaceAll("[^a-zA-Z]", "").toLowerCase();
