@@ -1,15 +1,15 @@
-/* Example 1:
-
+/* 
+EXAMPLE 1:
 Input: s = "A man, a plan, a canal: Panama"
 Output: true
 Explanation: "amanaplanacanalpanama" is a palindrome.
-Example 2:
 
+EXAMPLE 2:
 Input: s = "race a car"
 Output: false
 Explanation: "raceacar" is not a palindrome.
-Example 3:
 
+EXAMPLE 3:
 Input: s = " "
 Output: true
 Explanation: s is an empty string "" after removing non-alphanumeric characters.
